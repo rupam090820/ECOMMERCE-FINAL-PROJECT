@@ -1,0 +1,128 @@
+{
+  "contacts": [
+    {
+      "id": "tc1",
+      "name": "RupamSaha",
+      "email": "rupams441@gmail.com",
+      "altEmail": "sahababai321@gmail.com",
+      "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2BetQecEPZPH1770yc9Wtm2_yr90fGe1S0JkPrDXLnA&s",
+      "mob": "8903324244",
+      "pass": "aA1@aaaaa",
+      "cpass": "aA1@aaaaa",
+      "salary": "100000",
+      "city": "kolkata",
+      "pincode": "700054",
+      "state": "Gujrat"
+    },
+    {
+      "id": "tc2",
+      "name": "Pijus",
+      "email": "pijuss441@gmail.com",
+      "altEmail": "sbabai321@gmail.com",
+      "photo": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png",
+      "mob": "9903024033",
+      "pass": "aA1@aaaaa",
+      "cpass": "aA1@aaaaa",
+      "salary": "140000",
+      "city": "kolkata",
+      "pincode": "700052",
+      "state": "Maharastra"
+    },
+    {
+      "id": "tc3",
+      "name": "SWARAJ",
+      "email": "swarajs441@gmail.com",
+      "altEmail": "ababai321@gmail.com",
+      "photo": "https://cdn.pixabay.com/photo/2018/08/28/13/29/avatar-3637561_960_720.png",
+      "mob": "9815555022",
+      "pass": "aA1@aaaaa",
+      "cpass": "aA1@aaaaa",
+      "salary": "130000",
+      "city": "kolkata",
+      "pincode": "700053",
+      "state": "Maharastra"
+    },
+    {
+      "id": "tc4",
+      "name": "Anjan",
+      "email": "anjans441@gmail.com",
+      "altEmail": "sdas321@gmail.com",
+      "photo": "https://cdn.pixabay.com/photo/2014/04/03/11/47/avatar-312160_960_720.png",
+      "mob": "9903024011",
+      "pass": "aA1@aaaaa",
+      "cpass": "aA1@aaaaa",
+      "salary": "120000",
+      "city": "kolkata",
+      "pincode": "700052",
+      "state": "West-Bengal"
+    },
+    {
+      "name": "ajay",
+      "email": "rupams441@gmail.com",
+      "mob": "1235555545",
+      "pass": "aA1@aaaaa",
+      "cpass": "aA1@aaaaa",
+      "salary": "150000",
+      "state": "WB",
+      "city": "Kolkata",
+      "pincode": "700051",
+      "id": "n55HuBG",
+      "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2BetQecEPZPH1770yc9Wtm2_yr90fGe1S0JkPrDXLnA&s"
+    },
+    {
+      "name": "rajib",
+      "email": "rupams441@gmail.com",
+      "mob": "5555555557",
+      "pass": "aA1@aaaaa",
+      "cpass": "aA1@aaaaa",
+      "salary": "111111",
+      "photo": "https://e7.pngegg.com/pngimages/348/800/png-clipart-man-wearing-blue-shirt-illustration-computer-icons-avatar-user-login-avatar-blue-child.png",
+      "state": "WB",
+      "city": "Kolkata",
+      "pincode": "700051",
+      "id": "Uvyh_Lm"
+    }
+  ],
+  "group": [
+    {
+      "id": "1",
+      "name": "collegue"
+    },
+    {
+      "id": "2",
+      "name": "family"
+    },
+    {
+      "id": "3",
+      "name": "friend"
+    },
+    {
+      "id": "4",
+      "name": "social"
+    }
+  ],
+  "login": [],
+  "signup": [
+    {
+      "uname": "rupamsaha",
+      "email": "babaisaha560@gmail.com",
+      "pass1": "aA1@aaaaa",
+      "cpass": "aA1@aaaaa",
+      "id": 1
+    },
+    {
+      "uname": "partha",
+      "email": "rupams441111@gmail.com",
+      "pass1": "aA1@aaaaa",
+      "cpass": "aA1@aaaaa",
+      "id": 2
+    },
+    {
+      "uname": "partha",
+      "email": "rupams441111@gmail.com",
+      "pass1": "aA1@aaaaa",
+      "cpass": "aA1@aaaaa",
+      "id": 3
+    }
+  ]
+}

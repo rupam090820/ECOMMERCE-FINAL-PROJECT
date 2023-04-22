@@ -1,0 +1,22 @@
+<div class="container">
+    <img [src]="FOOD.imageUrl" [alt]="FOOD.name">
+    <div class="details">
+        <div class="header">
+            <span class="name">{{FOOD.name}}</span>
+        </div>
+        <div class="rating">
+            <star-rating [value]="FOOD.star" [totalstars]="5" checkedcolor="red" uncheckedcolor="black" size="24px"
+                [readonly]="true"></star-rating>
+        </div>
+        <div class="tag">
+            <a *ngFor="let tag of FOOD.tag " routerLink="/tag/{{tag}}">{{tag}}
+            </a>
+        </div><br>
+        <div class="cook-time">
+            <span>Time to cook about ⏲ <strong>{{FOOD.cookTime}}</strong></span>
+            <div class="price">{{FOOD.price|currency:'INR'}}</div>
+        </div>
+        <button class="button" (click)="addToCart()">Add To Cart</button>
+    </div>
+</div> 
+

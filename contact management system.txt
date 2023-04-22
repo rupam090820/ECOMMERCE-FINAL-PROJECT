@@ -1,0 +1,69 @@
+1)create All component
+2)then create model
+3)+configure rote section
+5ta10 5lack45
+4) degign contact manager page component
+5)degin add contact page design
+5.a) at firt create a reactive form
+5.b)add custom password validation
+6.a)edit contact page design
+(just copy add contact page andjust few this for ui
+7)degign view contact page
+
+
+8) ..............................................start backend work...........................................
+
+
+8.a) at first create a folder name server (outside ther src folder) then right click this folder name and click "open in intrigrity terminal"
+ then run a command in cmd ( npm init --yes) then we write "npm install json-server"
+8.b) create db.json file under server folder
+8.c) package.json file configuration
+
+go to package.json file under server folder
+under script portion delete "test" column and write 
+"start": "json-server --watch db.json -p 4000"
+8.d) run db.json file through "npm start" command
+
+9).................................. ...........start work on services.............................................................
+
+9.a) import HttpClientModule on contact.module.ts
+9.b) for view all contacts (get methode)  => http://localhost:4000/contacts
+9.c) for view single contact => http://localhost:4000/contacts/:contactId
+
+9.d) create new contact (post methode) => http://localhost:4000/contacts
+
+9.e) edit or update contact (put methode) => http://localhost:4000/contacts/:contactId
+
+9.f) for delete contact(delet methode) => http://localhost:4000/contacts/:contactId
+
+[ all methode decleare complete here ]
+
+10.a)showing data from services to component start video 6
+
+10.b) showing data to contact manager component.............
+10.c) start work on snipper and error for showing error message clintside and server side
+10.c) showing data all component like edit,view create
+
+
+11) for search data in contact manager component
+   11.a) at first install some module for search pagination :
+        npm i ng2-search-filter
+        npm i ng2-order-pipe
+        npm i ngx-pagination
+and go to module and import some module:
+import { Ng2OrderModule } from 'ng2-order-pipe';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
+https://youtu.be/YnAn7cePiMI
+https://youtu.be/YnAn7cePiMI
+
+
+......................login and signup page under contact module ......................
+
+1) create 2 component login and signup under the contact>component folder
+2) create 2 model under user folder, name is:- login.ts and signup.ts
+3) create one services under user folder, name is: loginApi
+
+id-rupams441111@gmail.com
+pas:- aA1@aaaaa

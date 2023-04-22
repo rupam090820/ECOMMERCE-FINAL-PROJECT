@@ -1,0 +1,93 @@
+
+    <!--======================    CONDITION BASE LOADING ===============-->
+
+    <div *ngIf="loading">
+        <app-spinner></app-spinner>
+    </div>
+    
+
+
+    <section class="vh-100">
+        <div class="container-fluid h-custom">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-9 col-lg-6 col-xl-5">
+              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+                class="img-fluid" alt="Sample image">
+            </div>
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+              <form [formGroup]="myform"  (ngSubmit)="login()">
+                <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+                  <p class="lead fw-normal mb-0 me-3">Log in with</p>
+                  <button type="button" class="btn btn-primary btn-floating mx-1">
+                    <i class="fa-brands fa-facebook fa-bounce fa-lg"></i>
+                  </button>
+      
+                  <button type="button" class="btn btn-primary btn-floating mx-1">
+                    <i class="fa-brands fa-linkedin-in fa-beat fa-lg"></i>
+                  </button>
+      
+                  <button type="button" class="btn btn-primary btn-floating mx-1">
+                    <i class="fa-solid fa-envelope fa-shake fa-lg"></i>
+                  </button>
+                </div>
+      
+                <div class="divider d-flex align-items-center my-4">
+                  <p class="text-center fw-bold mx-3 mb-0">Or</p>
+                </div>
+      
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                  
+                  <label class="form-label" for="form3Example3">Email address</label>
+
+                  <input class="form-control form-control-lg" type="email" name="email" placeholder="Enter a valid email address"
+                  [(ngModel)]="loguser.email" formControlName="email"
+                  [class.is-invalid]="email.invalid && (email.dirty||email.touched)">
+              <section *ngIf="email.invalid && (email.dirty||email.touched)">
+                  <small class="text-danger" *ngIf="email.errors?.['required']">email is Required!!</small>
+                  <small class="text-danger" *ngIf="email.errors?.['pattern']">please follow the email pattern!!
+                  </small>
+              </section>
+                </div>
+      
+                <!-- Password input -->
+                <div class="form-outline mb-3">
+                  
+                  <label class="form-label" for="form3Example4">Password</label>
+
+
+                  <input type="password" class="form-control form-control-lg" name="pass1" placeholder="Enter password" [(ngModel)]="loguser.pass1"
+                    formControlName="pass1" [class.is-invalid]="pass1.invalid && (pass1.dirty||pass1.touched)">
+                <section *ngIf="pass1.invalid && (pass1.dirty||pass1.touched)">
+                    <small class="text-danger" *ngIf="pass1.errors?.['required']">Password is Required!!</small>
+                    <small class="text-danger" *ngIf="pass1.errors?.['pattern']">a password must be eight characters
+                        including one uppercase letter,one lowercase letter, one special character and alphanumeric
+                        characters
+                    </small>
+                </section>
+                </div>
+      
+                <div class="d-flex justify-content-between align-items-center">
+                  <!-- Checkbox -->
+                  <div class="form-check mb-0">
+                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+                    <label class="form-check-label" for="form2Example3">
+                      Remember me
+                    </label>
+                  </div>
+                  <a href="#!" class="text-body">Forgot password?</a>
+                </div>
+      
+                <div class="text-center text-lg-start mt-4 pt-2">
+                  <button type="button" class="btn btn-primary btn-lg"
+                    style="padding-left: 2.5rem; padding-right: 2.5rem;"  [disabled]="myform.invalid" (click)="login()">Login</button>
+                  <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? 
+                      <a routerLink="AdminSignup" class="link-danger">Register</a></p>
+                </div>
+      
+              </form >
+            </div>
+          </div>
+        </div>
+        
+      </section>

@@ -1,0 +1,120 @@
+<section class="vh-100">
+    <div class="container py-2 h-100">
+        <div class="row d-flex align-items-center justify-content-center h-100">
+            <div class="col-md-8 col-sm-7 col-xl-6">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
+                    class="img-fluid" alt="Phone image">
+            </div>
+            <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+
+                <form [formGroup]="myform" (ngSubmit)="SignUp()">
+                    <!--Name input-->
+                    <div class="form-outline mb-2">
+
+
+
+                        <label class="form-label"
+                            style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;"><span>Name:-</span></label>
+
+                        <input type="email" class="form-control form-control-lg" placeholder="Enter Your Name"
+                            name="uname" [(ngModel)]="newuser.uname" formControlName="uname"
+                            [class.is-invalid]="uname.invalid && (uname.dirty||uname.touched)">
+
+                        <section *ngIf="uname.invalid && (uname.dirty||uname.touched)">
+                            <small class="text-danger" *ngIf="uname.errors?.['required']">First Name is
+                                Required!!</small>
+                            <small class="text-danger" *ngIf="uname.errors?.['pattern']">please follow the Name
+                                pattern!!
+                            </small>
+                        </section>
+                    </div>
+
+                    <!-- Email input -->
+                    <div class="form-outline mb-2">
+
+                        <label class="form-label">Email address:-</label>
+
+                        <input type="email" class="form-control form-control-lg" placeholder="Enter Youe Email Address"
+                            name="email" [(ngModel)]="newuser.email" formControlName="email"
+                            [class.is-invalid]="email.invalid && (email.dirty||email.touched)">
+
+                        <section *ngIf="email.invalid && (email.dirty||email.touched)">
+                            <small class="text-danger" *ngIf="email.errors?.['required']">email is Required!!</small>
+                            <small class="text-danger" *ngIf="email.errors?.['pattern']">please follow the email
+                                pattern!!
+                            </small>
+                        </section>
+
+
+                    </div>
+
+                    <!-- Password input -->
+                    <div class=" mb-2">
+
+                        <label class="form-label">Password:-</label>
+                        <input type="password" class="form-control form-control-lg" placeholder="Enter Your password"
+                            name="pas1" [(ngModel)]="newuser.pass1" formControlName="pass1"
+                            [class.is-invalid]="pass1.invalid && (pass1.dirty||pass1.touched)">
+
+
+                        <section *ngIf="pass1.invalid && (pass1.dirty||pass1.touched)">
+                            <small class="text-danger" *ngIf="pass1.errors?.['required']">Password is Required!!</small>
+                            <small class="text-danger" *ngIf="pass1.errors?.['pattern']">a password must be more than
+                                eight characters including one uppercase letter,one lowercase letter, one special
+                                character,one number and alphanumeric characters
+                            </small>
+                        </section>
+
+                    </div>
+
+                    <!-- Confirm Password input -->
+                    <div class="form-outline mb-2">
+
+                        <label class="form-label">Confirm Password:-</label>
+                        <input type="password" class="form-control form-control-lg"
+                            placeholder="Enter Your confirm  password" formControlName="cpass" name="cpass"
+                            [class.is-invalid]="cpass.invalid && (cpass.dirty||cpass.touched)">
+
+
+                        <section *ngIf="cpass.invalid && (cpass.dirty||cpass.touched)">
+                            <small class="text-danger" *ngIf="cpass.errors?.['required']">Confirm Password is
+                                Required!!</small>
+                            <small class="text-danger" *ngIf="cpass.errors?.['pattern']">a password must be eight
+                                characters including one uppercase letter,one lowercase letter, one special character
+                                and alphanumeric characters
+                            </small><br>
+                            <div *ngIf="myform.controls.cpass.invalid">
+                                <small class="text-success">Password And Confirm Password Should Be Same!!</small>
+                            </div>
+                        </section>
+
+
+                    </div>
+
+                    <div class="d-flex justify-content-around align-items-center mb-4">
+                        <!-- Checkbox -->
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
+                            <label class="form-check-label" for="form1Example3"> Remember me </label>
+                        </div>
+
+                    </div>
+
+                    <!-- Submit button -->
+                    <div class="row">
+                        <div class="col-xl-6">
+                            <button class="btn btn-primary btn-lg btn-block" (click)="SignUp()"
+                                [disabled]="myform.invalid">Sign
+                                in</button>
+                        </div>
+                        <div class="col-xl-6 text-right">
+                            <button type="submit" class="btn btn-primary btn-lg  btn-block" routerLink="/AdminLogin">Back To
+                                Login</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

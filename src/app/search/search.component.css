@@ -1,0 +1,15 @@
+div{
+    
+    margin-top: 5px;
+  
+}
+input{
+     /* border-radius: 7rem 0  1rem;  */
+    
+    background-color: #f1f1f1;
+}
+
+div button:hover{
+    opacity: 1;
+    cursor: pointer;
+}

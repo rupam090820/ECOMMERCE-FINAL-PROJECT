@@ -1,0 +1,199 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col">
+            <p class="h3 fw-bold text-primary"><i class="fa fa-pen"></i>
+                Edit Employe Details
+            </p>
+            <p class="fst-italic">Please Edit the details of Employe</p>
+        </div>
+    </div>
+</div>
+<!-- <pre>{{contact | json}}</pre> -->
+<!--===================================EDIT CONTACT FORM==========================================-->
+
+<!-- here use ngmodel for edit data in form -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <form [formGroup]="myform">
+                <div class="mb-2">
+                    First Name:-
+                    <input type="text" name="name" class="form-control" placeholder="Enter your first name"
+                        formControlName="name" [class.is-invalid]="name.invalid && (name.dirty||name.touched)"
+                        [(ngModel)]="contact.name" [value]="contact.name"
+                        >
+                    <section *ngIf="name.invalid && (name.dirty||name.touched)">
+                        <small class="text-danger" *ngIf="name.errors?.['required']">First Name is Required!!</small>
+                        <small class="text-danger" *ngIf="name.errors?.['pattern']">please follow the Name pattern!!
+                        </small>
+                    </section>
+
+                </div>
+                <div class="mb-2">
+                    Email:-
+                    <input type="text" name="email" class="form-control" placeholder="Enter your Email"
+                        formControlName="email" [class.is-invalid]="email.invalid && (email.dirty||email.touched)"
+                        [(ngModel)]="contact.email" [value]="contact.email">
+                    <section *ngIf="email.invalid && (email.dirty||email.touched)">
+                        <small class="text-danger" *ngIf="email.errors?.['required']">email is Required!!</small>
+                        <small class="text-danger" *ngIf="email.errors?.['pattern']">please follow the email pattern!!
+                        </small>
+                    </section>
+                </div>
+
+                <!--============================  ALTRANATIVE EMAIL ADD =====================================-->
+                <div class="mb-2">
+                    <section>
+
+                        <button class="btn btn-small btn-primary" (click)="addemail()">ADD Email</button>
+                        <div class="form-group" formArrayName="altEmail"
+                          
+                        *ngFor="let ea of altEmail.controls; let i=index;"
+                            >
+                            <span>Email {{i+1}}</span>
+                            <input type="email" [formControlName]="i"
+                                [class.is-invalid]="ea.invalid &&(ea.dirty|| ea.touched)">
+                            <span class="badge badge-pills badge-danger" (click)="removeEmails(i)"
+                                style="background-color: blue;">remove</span>
+
+                            <section *ngIf="ea.invalid && (ea.dirty||ea.touched)">
+                                <small class="text-danger" *ngIf="ea.errors?.['required']">Email is Required!!</small>
+                                <small class="text-danger" *ngIf="ea.errors?.['pattern']">please follow the Email
+                                    pattern!!
+                                </small>
+                            </section>
+                        </div>
+                        
+                        <!-- <input type="text" name="altEmail" class="form-control" placeholder="ADD altranative Email"
+                        formControlName="altEmail"
+                        [class.is-invalid]="altEmail.invalid && (altEmail.dirty||altEmail.touched)">
+                    <section *ngIf="altEmail.invalid && (altEmail.dirty||altEmail.touched)">
+                        <small class="text-danger" *ngIf="altEmail.errors?.['required']">Email is Required!!</small>
+                        <small class="text-danger" *ngIf="altEmail.errors?.['pattern']">please follow the Email
+                            pattern!!
+                        </small>
+                    </section> -->
+                    </section>
+                </div>
+
+                <div class="mb-2">
+                    mob:-
+                    <input type="text" name="mob" class="form-control" placeholder="Enter your Mobile Number"
+                        formControlName="mob" [class.is-invalid]="mob.invalid && (mob.dirty||mob.touched)"
+                        [(ngModel)]="contact.mob" [value]="contact.mob">
+                    <section *ngIf="mob.invalid && (mob.dirty||mob.touched)">
+                        <small class="text-danger" *ngIf="mob.errors?.['required']">Mobile Number is Required!!</small>
+                        <small class="text-danger" *ngIf="mob.errors?.['pattern']">please follow the Mobile Number
+                            pattern!!
+                        </small>
+                    </section>
+                </div>
+
+                <div class="mb-2">
+                    Password:-
+                    <input type="text" name="pass" class="form-control" placeholder="Enter your Password"
+                        formControlName="pass" [class.is-invalid]="pass.invalid && (pass.dirty||pass.touched)"
+                        [(ngModel)]="contact.pass" [value]="contact.pass">
+                    <section *ngIf="pass.invalid && (pass.dirty||pass.touched)">
+                        <small class="text-danger" *ngIf="pass.errors?.['required']">Password is Required!!</small>
+                        <small class="text-danger" *ngIf="pass.errors?.['pattern']">please follow the Password pattern!!
+                        </small>
+                    </section>
+                </div>
+                <div class="mb-2">
+                    Confirm Password:-
+                    <input type="text" name="cpass" class="form-control" placeholder="Enter your Confirm Password"
+                        formControlName="cpass" [class.is-invalid]="cpass.invalid && (cpass.dirty||cpass.touched)"
+                        [(ngModel)]="contact.cpass" [value]="contact.cpass">
+                    <section *ngIf="cpass.invalid && (cpass.dirty||cpass.touched)">
+                        <small class="text-danger" *ngIf="cpass.errors?.['required']">Confirm Password is
+                            Required!!</small>
+                        <small class="text-danger" *ngIf="cpass.errors?.['pattern']">please follow the Password
+                            pattern!!
+                        </small>
+                    </section>
+                    <div *ngIf="myform.controls.cpass.invalid">
+                        <small class="text-danger">Password And Confirm Password Should Be Same!!</small>
+                    </div>
+
+                </div>
+                <div class="mb-2">
+                    Salary:-
+                    <input type="text" name="salary" placeholder="enter your salary" class="form-control"
+                        formControlName="salary" [class.is-invalid]="salary.invalid && (salary.dirty||salary.touched)"
+                        [(ngModel)]="contact.salary" [value]="contact.salary">
+                    <section *ngIf="salary.invalid && (salary.dirty||salary.touched)">
+                        <small class="text-danger" *ngIf="name.errors?.['required']"> salary is
+                            Required!!</small>
+                        <small class="text-danger" *ngIf="salary.errors?.['pattern']">please follow the salary pattern!!
+                        </small>
+                    </section>
+                </div>
+                <div class="mb-2">
+                    Photo url:-
+                    <input type="text" name="photo"  placeholder="enter your image url" class="form-control"
+                        formControlName="photo" [class.is-invalid]="photo.invalid && (photo.dirty||photo.touched)"
+                        [(ngModel)]="contact.photo" [value]="contact.photo">
+                    <section *ngIf="photo.invalid && (photo.dirty||photo.touched)">
+                        <small class="text-danger" *ngIf="name.errors?.['required']"> photo is
+                            Required!!</small>
+                        
+                    </section>
+                </div>
+
+
+                <div class="card">
+                    <fieldset formGroupName="address">
+                        <legend>Address:-</legend>
+                        <div class="form-group" formControlName="address">
+                            <div class="mb-2">
+                                State:-
+
+                                <select class="form-control" formControlName="state" (change)="forstate()"
+                                [(ngModel)]="contact.state" [value]="contact.state">
+                                    <option value="">select state</option>
+                                    <option  *ngFor="let s of stateWiseCity" >{{s.state}}</option>
+                                </select>
+                            </div>
+
+                        </div>
+                        <div class="mb-2">
+                            City:-
+
+                            <select class="form-control" formControlName="city"
+                           >
+                                 <option value="">CHOOSE A CITY</option> 
+                                <option  *ngFor=" let c of citylist" >{{c}}</option>
+                                
+                            </select>
+
+                        </div>
+                        <div class="mb-2">
+                            Pincode:-
+                            <input type="text" class="form-control" formControlName="pincode"
+                                [class.is-invalid]="pincode.invalid && (pincode.dirty||pincode.touched)"
+                                [(ngModel)]="contact.pincode" [value]="contact.pincode">
+                            <section *ngIf="pincode.invalid && (pincode.dirty||pincode.touched)">
+                                <small class="text-danger" *ngIf="pincode.errors?.['required']">pincode is
+                                    Required!!</small>
+                                <small class="text-danger" *ngIf="pincode.errors?.['pattern']">please follow the pincode
+                                    pattern!!
+                                </small>
+                            </section>
+                        </div>
+
+                    </fieldset>
+                </div>
+                <div class="mb-2">
+                    <button type="submit" (click)="send()"class="btn btn-primary ms-2" [disabled]="!myform.valid">Update</button>
+                      <a routerLink="/contacts/admin" class="btn btn-warning ms-2">close</a>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-sm-4">
+            <img [src]="contact.photo"
+            alt="user picture" class="contact-img">
+        </div>
+    </div>
+</div>

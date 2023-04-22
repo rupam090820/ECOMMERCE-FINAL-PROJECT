@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+/*   STEP 1 ADDING GOOGLE FONTS   */
+/* @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+*{
+    box-sizing: border-box;
+
+}
+*{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+} */
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
+body{
+font-family: 'Electrolize' ,sans-serif;
+font-size: 15px;
+margin: 0;
+box-sizing: border-box;
+}
+
+/* for contact module all immage */
+.contact-img{
+    width: 100px;
+    border-radius: 50%;
+}
+.contact-img-details{
+    width: 200px;
+    border-radius: 50%;
+}

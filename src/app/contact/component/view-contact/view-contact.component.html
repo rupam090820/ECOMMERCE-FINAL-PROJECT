@@ -1,0 +1,76 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col">
+            <p class="h3 fw-bold text-primary"><i class="fa fa-eye"></i>
+                Employe Details
+            </p>
+            <p class="fst-italic">Please watch the details of Employe</p>
+        </div>
+    </div>
+</div>
+<!--======================    CONDITION BASE LOADING ===============-->
+
+<div *ngIf="loading">
+    <app-spinner></app-spinner>
+</div>
+
+
+<!--  ..........................VIeW CONTACT DETAILS.................-->
+
+<div class="container" *ngIf="!loading && isNotEmtry()">
+    <div class="row align-items-center">
+        <!-- <div  class="col-md-6"> -->
+            <div   class="col-sm-4">
+                <img [src]="contact.photo" alt="user picture"
+                    class="contact-img-details">
+            </div>
+            <div class="col-sm-6" >
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        Name:- <span class="fw-bold">{{contact.name}}</span>
+                    </li>
+                    <li class="list-group-item">
+                        Email:- <span class="fw-bold">{{contact.email}}</span>
+                    </li>
+                    <li class="list-group-item">
+                        Altranative Email:- <span class="fw-bold">{{contact.altEmail}}</span>
+                    </li>
+                    <li class="list-group-item">
+                        Mobile:- <span class="fw-bold">{{contact.mob}}</span>
+                    </li>
+                    <li class="list-group-item">
+                        Password:- <span class="fw-bold">{{contact.pass}}</span>
+                    </li>
+                    <li class="list-group-item">
+                        Confirm Password:- <span class="fw-bold">{{contact.cpass}}</span>
+                    </li>
+                    <li class="list-group-item">
+                        photo url:- <span class="fw-bold">{{contact.photo}}</span>
+                    </li>
+                    <li class="list-group-item">
+                        Sallary:- <span class="fw-bold">{{contact.salary}}</span>
+                    </li>
+                    <li class="list-group-item">
+                        State:- <span class="fw-bold">{{contact.state}}</span>
+                    </li>
+                    <li class="list-group-item">
+                        City:- <span class="fw-bold">{{contact.city}}</span>
+                    </li>
+                    <li class="list-group-item">
+                        Pincode:- <span class="fw-bold">{{contact.pincode}}</span>
+                    </li>
+                    <!-- <li class="list-group-item">
+                        Group Name:- <span class="fw-bold">{{}}</span>
+                    </li> -->
+                </ul>
+            </div>
+             <!-- <pre>{{contact | json}}</pre>  -->
+            <div class="row">
+                <div class="col">
+                    <button routerLink="/contacts/admin" class="btn btn-warning"><i
+                            class="fa fa-arrow-alt-circle-left">&nbsp;</i>BACK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- </div> -->
